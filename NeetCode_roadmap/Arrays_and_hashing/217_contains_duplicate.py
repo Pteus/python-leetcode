@@ -1,15 +1,23 @@
 # https://www.youtube.com/watch?v=3OamzN90kPg
 
-nums = [1,1,1,3,3,4,3,2,4,2]
+from typing import List
 
-hashset = set()
 
-for n in nums:
-    if n in hashset:
-        print("duplicate found:",n)
-        break
-        #return True
-    hashset.add(n)
+nums = [1, 1, 1, 3, 3, 4, 3, 2, 4, 2]
+
+
+def containsDuplicate(nums: List[int]) -> bool:
+    seen = set()
+
+    for num in nums:
+        if seen and num in seen:
+            return True
+        else:
+            seen.add(num)
+    return False
+
+
+print(containsDuplicate(nums))
 
 # time: O(n)
 # space O(n)
