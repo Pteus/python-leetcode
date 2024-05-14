@@ -12,7 +12,7 @@ class Solution:
         return self.merge_sort_helper(pairs, 0, len(pairs) - 1)
 
     def merge_sort_helper(self, pairs, s, e):
-        if e - s + 1 <= 1:
+        if e - s <= 0:
             return pairs
 
         # find the middle
