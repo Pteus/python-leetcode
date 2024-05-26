@@ -28,6 +28,18 @@ def fibonacci_recursive_2(n):
         return fibonacci_recursive_2(n - 1) + fibonacci_recursive_2(n - 2)
 
 
+def dp(n):
+    if n < 2:
+        return n
+
+    dp = [0, 1]
+    i = 2
+    while i <= n:
+        dp[0], dp[1] = dp[1], dp[0] + dp[1]
+        i += 1
+    return dp[1]
+
+
 n = 14
 print("Iterative - Fibonacci at index", n, "=", fibonacci_iterative(n))
 print(
@@ -43,3 +55,5 @@ print(
     "values:",
     [fibonacci_recursive_2(n) for n in range(14)],
 )
+
+print(dp(14))
