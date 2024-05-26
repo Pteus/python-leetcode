@@ -1,4 +1,5 @@
 # Brute force
+# O(n^2)
 def brute_force(nums):
     max_sum = nums[0]
 
@@ -11,6 +12,7 @@ def brute_force(nums):
     return max_sum
 
 
+# O(n)
 def kadane(nums):
     max_sum = nums[0]
     cur_sum = 0
